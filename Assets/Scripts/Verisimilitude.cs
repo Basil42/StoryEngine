@@ -7,6 +7,7 @@ using UnityEngine.Assertions;
 public class Verisimilitude : ScriptableObject
 {
     [SerializeField] List<Character> _characters;
+    [SerializeField] List<Action> _Actions;
     [SerializeField] List<Beat> _beats;
 
     int _time = 0;
