@@ -11,6 +11,7 @@ public class Verisimilitude : ScriptableObject
     [SerializeField] List<Beat> _beats;
 
     int _time = 0;
+    public int Time { get { return _time; } }
     int _nextBeat = 0;
 
     public void Init()
@@ -19,6 +20,7 @@ public class Verisimilitude : ScriptableObject
         _time = 0;
         _nextBeat = 0;
 
+        Logger.SetEngine(this);
         //sort and sanity check beats
         for (int i = 0; i < _beats.Count; i++)
         {
