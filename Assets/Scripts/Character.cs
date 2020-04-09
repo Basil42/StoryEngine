@@ -23,6 +23,8 @@ public class Character : ScriptableObject
     [SerializeField] List<Trait> _traits;
     [SerializeField] List<Relationship> _relationships;
     [SerializeField] List<Goal> _goals;
+    //Representation of the world state
+    VirtualWorldState _percievedWorldState = new VirtualWorldState();
     
 
     Action _nextAction = null;
@@ -51,10 +53,9 @@ public class Character : ScriptableObject
         //_nextAction = _actions[bestAction];
         for(int i = 0; i < _Scores.Count; i++)
         {
-            _Scores[i].s_Score = 0;
-            _Scores[i].s_Score += _Scores[i].s_Action.getCompatibility(_traits);
-            _Scores[i].s_Score += _Scores[i].s_Action.getCompatibility(_goals);
-
+            _Scores[i].s_Score = _Scores[i].s_Action.getCompatibility(this);
+            
+            
         }
     }
 

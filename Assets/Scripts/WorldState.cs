@@ -5,5 +5,7 @@ using UnityEngine;
 
 public abstract class WorldState
 {
-
+    List<Character> characters;
+    List<Beat> beats;
+    
 }

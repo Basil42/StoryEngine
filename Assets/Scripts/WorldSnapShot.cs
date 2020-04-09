@@ -5,5 +5,5 @@ using UnityEngine;
 
 public class WorldSnapShot : WorldState
 {
-
+    List<Action> actions; //action taken this turn
 }
